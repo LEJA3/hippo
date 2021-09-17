@@ -8,6 +8,7 @@ import "./nhsd-frontend/nhsd-frontend";
 import {printingEvents} from "./events/printingEvents";
 import "./print-publication";
 import "./feed-page";
+import "./show-hide-articles";
 
 initCookieConsent();
 printingEvents();
