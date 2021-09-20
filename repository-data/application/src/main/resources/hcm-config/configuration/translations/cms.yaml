@@ -6,6 +6,8 @@ definitions:
       internal-or-external-link#choose-one: You must enter either an external link
         OR an internal link.
       issn: 'ISSN does not match the required format: 0000-0000'
+      no-script: 'Do not include anything that resembles an opening or closing HTML
+        script tag: ''<script'', ''script>''.'
       ordernumber: This number must be from range 0-99
       percentage: Progress percentage should be between 0-100
       phonenumber: Telephone number formatting

@@ -42,6 +42,8 @@ definitions:
             hipposysedit:path: website:text
             hipposysedit:primary: false
             hipposysedit:type: Text
+            hipposysedit:validators:
+            - no-script
             jcr:primaryType: hipposysedit:field
           hipposysedit:node: true
           hipposysedit:supertype:
