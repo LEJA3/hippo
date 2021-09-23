@@ -1,6 +1,6 @@
 <#ftl output_format="HTML">
 
-<#macro metaTags>
+<#macro metaTags contentTitle="" contentDescription="">
     <#assign siteTitle = "NHS Digital"/>
     <#assign pageTitle = 'Home - ' + siteTitle />
     <#assign siteSEOSummary = "We’re the national information and technology partner to the health and social care system using digital technology to transform the NHS and social care" />
@@ -8,11 +8,17 @@
     <#assign defaultMetaImage><@hst.webfile path="images/nhs-digital-logo-social.jpg" fullyQualified=true/></#assign>
     <#assign defaultTwitterImage = defaultMetaImage />
 
+    <#if contentTitle?? && contentTitle?has_content >
+        <#assign pageTitle = contentTitle />
+    </#if>
     <#if document?? && document.title??>
         <#assign pageTitle = document.title + ' - ' + siteTitle />
     </#if>
     <#if overridePageTitle?? >
         <#assign pageTitle = overridePageTitle + ' - ' + siteTitle />
+    </#if>
+    <#if contentDescription?? && contentDescription?has_content>
+        <#assign pageSEOSummary = contentDescription />
     </#if>
     <#if document?? && document.seosummary?? && document.seosummary?has_content>
         <#noautoesc>
