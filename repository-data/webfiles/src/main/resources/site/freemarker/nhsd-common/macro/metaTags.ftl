@@ -7,8 +7,6 @@
     <#assign pageSEOSummary = siteSEOSummary />
     <#assign defaultMetaImage><@hst.webfile path="images/nhs-digital-logo-social.jpg" fullyQualified=true/></#assign>
     <#assign defaultTwitterImage = defaultMetaImage />
-    contentTitle --> ${contentTitle}</br>
-    contentDescription --> ${contentDescription}
 
     <#if document?? && document.title??>
         <#assign pageTitle = document.title + ' - ' + siteTitle />
