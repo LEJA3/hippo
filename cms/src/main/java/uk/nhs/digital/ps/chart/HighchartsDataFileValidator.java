@@ -13,7 +13,6 @@ import uk.nhs.digital.ps.chart.input.HighchartsJcrNodeReader;
 import java.util.Optional;
 
 import javax.jcr.Node;
-import javax.jcr.RepositoryException;
 
 public class HighchartsDataFileValidator implements Validator<NodeDecorator> {
 
@@ -31,7 +30,7 @@ public class HighchartsDataFileValidator implements Validator<NodeDecorator> {
                 return Optional.of(context.createViolation());
             }
 
-        } catch (RepositoryException e) {
+        } catch (Exception e) {
             LOGGER.error("Error occurred during validation ", e);
         }
 
@@ -41,7 +40,7 @@ public class HighchartsDataFileValidator implements Validator<NodeDecorator> {
     private boolean isChartConfigInvalid(final AbstractHighchartsParameters parameters) {
 
         if (parameters.noInputFileContent()) {
-            return false;
+            return true;
         }
 
         final HighchartsInputParser parser = HippoServiceRegistry.getService(HighchartsInputParser.class);
