@@ -1,11 +1,8 @@
 import { expect } from '@playwright/test';
-import {Given, setWorldConstructor, Then} from '@cucumber/cucumber';
+import {Given, Then} from '@cucumber/cucumber';
 import getPage from './pages';
-import CustomWorld from "./world";
 
-const site = 'http://localhost:8080/site'
-
-setWorldConstructor(CustomWorld);
+const site = 'http://localhost:8080/site';
 
 Given('I navigate to the {string} page', async function (page: string) {
     const url = getPage(page);
